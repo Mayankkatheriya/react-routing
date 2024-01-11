@@ -1,10 +1,13 @@
 import "./Header.css";
-import logo from "../Assets/logo.svg";
+import logo from "../../Assets/logo.svg";
 import { useState } from "react";
 import Lists from "./Lists";
 import { Link } from "react-router-dom";
 function Header() {
-  const [currentPage, setCurrentPage] = useState("Home")
+  const [currentPage, setCurrentPage] = useState(()=>{
+    let page = localStorage.getItem("currrentPage")
+    return (page) ? page : "Home"
+  })
   const listItem = [
     { title: "Home", path: "/" },
     { title: "Quote", path: "/quotes" },
@@ -15,6 +18,8 @@ function Header() {
 
   const handlePage = (page) => {
     setCurrentPage(page)
+    //set in localStorage
+    localStorage.setItem('currrentPage', page);
   }
   return (
     <header className="header">

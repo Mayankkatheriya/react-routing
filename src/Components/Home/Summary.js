@@ -1,4 +1,4 @@
-import image from '../Assets/summary.avif';
+import image from '../../Assets/summary.avif';
 import { Link } from 'react-router-dom';
 
 const Summary =  () => {
