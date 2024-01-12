@@ -5,6 +5,8 @@ import ErrorPage from './ErrorPage';
 import Home from './Home/Home';
 import Quotes from './Quotes/Quotes'
 import Restaurant from './Restaurant/Restaurant'
+import Contact from './Contact/Contact';
+import Foods from './Foods/Foods';
 
 const App = () => {
   const router = createBrowserRouter([
@@ -27,11 +29,11 @@ const App = () => {
         },
         {
           path: '/foods',
-          element: <h1>Foods</h1>
+          element: <Foods />
         },
         {
           path: '/contact',
-          element: <h1>Contact Us</h1>
+          element: <Contact />
         }
       ]
     }
