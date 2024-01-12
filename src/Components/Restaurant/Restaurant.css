@@ -16,7 +16,7 @@
     padding: 1rem;
 }
 
-input {
+.filter-options input {
     outline: none;
     padding: .4rem;
     font-size: 1.1rem;

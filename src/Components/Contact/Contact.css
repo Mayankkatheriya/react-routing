@@ -65,6 +65,94 @@
     line-height: 1.5rem;
 }
 
+.form-outer {
+    padding: 3rem;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);
+    background-color: #fff;
+    border-radius: .5rem;
+    position: relative;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form input, .form textarea {
+    outline: 2px solid #f7f7f7;
+    outline-offset: 2px;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    padding: .75rem 14px;
+    border: 1px solid #b3b3b3;
+    border-radius: .25rem;
+}
+.form button {
+    padding: 10px 25px;
+    font-weight: 500;
+    background: rgb(59,130,246);
+    outline: none !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    border-radius: .5rem;
+  }
+  
+  .form button {
+    border: none;
+    z-index: 1;
+    color: #fff;
+  }
+  
+  .form button:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    direction: rtl;
+    z-index: -1;
+    background: rgb(29 78 216);
+    transition: all 0.3s ease;
+    border-radius: .5rem;
+  }
+  
+  .form button:hover {
+    color: #fff;
+  }
+  
+  .form button:hover:after {
+    left: auto;
+    right: 0;
+    width: 100%;
+  }
+  
+  .form button:active {
+    top: 2px;
+  }
+
+  .form-outer span {
+    position: absolute;
+    z-index: -1;
+  }
+
+  .first {
+    top: -2.5rem;
+    right: -2.25rem;
+  }
+
+  .second {
+    top: 90px;
+    right: -2rem;
+  }
+
+  .third {
+    left: -1.75rem;
+    bottom: -1.75rem;
+  }
 
 @media screen and (max-width: 900px) {
     .contact {
