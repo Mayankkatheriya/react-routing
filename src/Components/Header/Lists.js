@@ -11,7 +11,7 @@ const Lists = ({ listItem, func, currentPage }) => {
             key={nanoid()}
             to={item.path}
             style={{
-              color: item.title === currentPage ? "rgb(59, 130, 246)" : "#fff",
+              color: (item.title === currentPage) && "rgb(59, 130, 246)",
             }}
           >
             <li onClick={() => func(item.title)}>{item.title}</li>

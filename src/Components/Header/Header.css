@@ -44,10 +44,6 @@
   font-weight: 500;
 }
 
-.nav-menu ul li a:hover {
-  color: rgb(59, 130, 246);
-}
-
 .nav-btn-container {
   display: flex;
   gap: 1rem;
@@ -75,7 +71,7 @@
   display: none;
 }
 
-@media screen and (max-width: 761px) {
+@media screen and (max-width: 768px) {
   .header {
     width: 100%;
     position: sticky;
@@ -96,7 +92,7 @@
     width: 100%;
     top: 100%;
     left: 0;
-    background-color: #000;
+    background-color: rgba(15, 24, 39, 0.815);
     z-index: 20;
     transition: .2s ease-in-out;
   }
@@ -109,9 +105,10 @@
   }
   .mobile-nav-menu ul li {
     padding: 1rem;
+    text-align: center;
   }
   .mobile-nav-menu ul li:hover {
     background-color: rgb(15, 24, 39);
-
+    color: rgb(29 78 216);
   }
 }
