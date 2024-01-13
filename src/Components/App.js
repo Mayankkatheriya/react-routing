@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { createBrowserRouter, RouterProvider, } from "react-router-dom";
 import Layout from './Layout';
 import ErrorPage from './ErrorPage';
@@ -7,6 +7,9 @@ import Quotes from './Quotes/Quotes'
 import Restaurant from './Restaurant/Restaurant'
 import Contact from './Contact/Contact';
 import Foods from './Foods/Foods';
+import Recipe from './Foods/Recipe';
+import FoodProvider from '../Context/FoodContext';
+
 
 const App = () => {
   const router = createBrowserRouter([
@@ -32,15 +35,21 @@ const App = () => {
           element: <Foods />
         },
         {
+          path: '/foods/:foodId',
+          element: <Recipe />
+        },
+        {
           path: '/contact',
           element: <Contact />
         }
       ]
-    }
+    },
   ]);
   return (
-      <RouterProvider router={router} />
+      <FoodProvider>
+        <RouterProvider router={router} />
+      </FoodProvider>
   )
 }
 
-export default App
+export default memo (App)

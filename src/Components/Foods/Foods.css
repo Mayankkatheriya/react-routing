@@ -1,8 +1,121 @@
 .foods {
-    flex: 1;
-    padding: 2rem 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+.food_card {
+  width: 100%;
+  max-width: 280px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  padding: 2rem;
+  border-radius: 10px;
+  gap: 15px;
+}
+
+.food_card h4 {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.food_card img {
+  width: 200px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 3px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  transition: 0.3s ease-in-out;
+}
+.food_card img:hover {
+    cursor: pointer;
+  transform: scale(1.05);
+}
+.food_card .catagory {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.food_card .catagory button {
+  outline: none;
+  background: none;
+  border: 2px solid rgb(37, 99, 235);
+  padding: 0.19rem 0.5rem;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.food_card .catagory button:hover {
+  color: white;
+  font-weight: 600;
+  background-color: rgb(37, 99, 235);
+}
+
+.food_card .catagory button a {
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  color: black;
+}
+
+.food_card .catagory button:hover a {
+  color: #fff;
+}
+
+.recipe {
+  width: 100%;
+  flex: 1;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.notFound {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.recipe h1 {
+  margin-bottom: 2rem;
+}
+
+.recipe h1 span {
+  text-decoration: dashed underline;
+  font-size: 2.4rem;
+  font-family: cursive;
+}
+
+.recipe-details {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.food-img {
+  height: 400px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.food-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.requirements {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
 }
