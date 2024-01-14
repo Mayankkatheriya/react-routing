@@ -119,3 +119,9 @@
   flex-direction: column;
   gap: .5rem;
 }
+
+@media screen and (max-width: 768px) {
+  .recipe-details {
+    grid-template-columns: 1fr;
+  }
+}
