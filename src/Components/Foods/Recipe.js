@@ -1,21 +1,51 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { FoodContext } from "../../Context/FoodContext";
 
 const Recipe = () => {
-  const data = useContext(FoodContext)
+  const [foodDetails, setFoodDetails] = useState(()=>{
+    const recipe = localStorage.getItem("recipe")
+    if(!recipe) {
+      return {}
+    }
+    return JSON.parse(recipe);
+  })
+  const data = useContext(FoodContext);
   const param = useParams();
 
-  // // Find the specific recipe details in the context
-  const foodDetails = data.foodsData.find((food) => food.idMeal === param.foodId);
+  useEffect(() => {
+    // Find the specific recipe details in the context
+    const currentFoodDetails = data.foodsData.find(
+      (food) => food.idMeal === param.foodId
+    );
 
+    if (currentFoodDetails) {
+      // Update local state and local storage if the data is found
+      setFoodDetails(currentFoodDetails);
+      localStorage.setItem("recipe", JSON.stringify(currentFoodDetails));
+    }
+  }, [data.foodsData, param.foodId]);
+ 
   if (!foodDetails) {
     // Handle the case where the specific recipe details are not available in the context
     return (
       <div className="recipe">
-        <div className='notFound'>Recipe details not found</div>;
+        <div className="notFound">Recipe details not found</div>;
       </div>
-    )
+    );
+  }
+
+  const ingredients = [];
+  for (let i = 1; i <= 20; i++) {
+    const ingredient = foodDetails[`strIngredient${i}`];
+    const measurement = foodDetails[`strMeasure${i}`];
+
+    // Stop processing when no more ingredients are found
+    if (!ingredient) {
+      break;
+    }
+
+    ingredients.push(`${measurement} ${ingredient}`);
   }
 
   return (
@@ -28,11 +58,40 @@ const Recipe = () => {
           <img src={foodDetails.strMealThumb} alt="" />
         </div>
         <div className="requirements">
-          <p><span>Food : </span>{foodDetails.strMeal}</p>
-          <p><span>Category : </span>{foodDetails.strCategory}</p>
-          <p><span>Origin : </span>{foodDetails.strArea}</p>
-          <p><span>Video : </span><a href={foodDetails.strYoutube} target="_blank" rel="noopener noreferrer">Youtube</a></p>
-          <p><span>Instructions : </span>{foodDetails.strInstructions}</p>
+          <p>
+            <strong>Food : </strong>
+            {foodDetails.strMeal}
+          </p>
+          <p>
+            <strong>Category : </strong>
+            {foodDetails.strCategory}
+          </p>
+          <p>
+            <strong>Origin : </strong>
+            {foodDetails.strArea}
+          </p>
+          <p>
+            <strong>Tags : </strong>
+            {foodDetails.strTags}
+          </p>
+          <p>
+            <strong>Video : </strong>
+            <a
+              href={foodDetails.strYoutube}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Youtube
+            </a>
+          </p>
+          <p>
+            <strong>Ingredient : </strong>
+            {ingredients.join()}
+          </p>
+          <p>
+            <strong>Instructions : </strong>
+            {foodDetails.strInstructions}
+          </p>
         </div>
       </div>
     </div>
