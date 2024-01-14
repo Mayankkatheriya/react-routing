@@ -1,11 +1,11 @@
 import "./Foods.css";
-import React, { memo, useEffect } from "react";
+import React, { memo, useContext, useEffect } from "react";
 import axios from "axios";
-import { getFoodData } from "../../Context/FoodContext";
+import { FoodContext } from "../../Context/FoodContext";
 import { Link } from "react-router-dom";
 
 const Foods = () => {
-  const data = getFoodData();
+  const data = useContext(FoodContext)
 
   const fetchApi = async () => {
     try {

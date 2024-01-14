@@ -13,8 +13,3 @@ const FoodProvider = ({ children }) => {
 };
 
 export default FoodProvider
-
-export const getFoodData = () => {
-  const ctx = useContext(FoodContext)
-  return ctx
-}

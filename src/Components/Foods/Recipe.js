@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
-import { getFoodData } from "../../Context/FoodContext";
+import { FoodContext } from "../../Context/FoodContext";
 
 const Recipe = () => {
-  const data = getFoodData();
+  const data = useContext(FoodContext)
   const param = useParams();
 
   // // Find the specific recipe details in the context
