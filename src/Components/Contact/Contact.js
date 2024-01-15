@@ -4,6 +4,7 @@ import data from "./ContactDetailsData";
 import Details from "./Details";
 
 const Contact = () => {
+  window.scroll(0,0);
   return (
     <main className="contact">
       <div className="contact-details">
