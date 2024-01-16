@@ -19,6 +19,10 @@
   color: #fff;
 }
 
+.menu-active {
+  color: rgb(59, 130, 246);
+}
+
 .nav-logo {
   display: flex;
   justify-content: center;
