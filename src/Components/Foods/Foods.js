@@ -10,6 +10,7 @@ const Foods = () => {
   const [isLoading, setLoading] = useState(true);
   const data = useContext(FoodContext);
 
+  //* --------fetching data from API-------------->
   const fetchApi = async () => {
     try {
       const response = await axios.get(
@@ -25,7 +26,7 @@ const Foods = () => {
   useEffect(() => {
     setTimeout(() => {
       fetchApi();
-    }, 1500);
+    }, 1200);
   }, []);
 
   return (
