@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import FoodListSkeleton from "./FoodListSkeleton";
 
 const Foods = () => {
-  window.scroll(0,0);
+  // window.scroll(0,0);
   const [isLoading, setLoading] = useState(true);
   const data = useContext(FoodContext);
 

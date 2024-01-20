@@ -4,7 +4,7 @@ import Card from "./RestaurantCard";
 import {useState} from 'react'
 
 const Restaurant = () => {
-  window.scroll(0,0);
+  // window.scroll(0,0);
   let [restaurantData , setRestaurantData] = useState(data);
   let [searchName, setSearchName] = useState("")
   let [searchFood, setSearchFood] = useState("")

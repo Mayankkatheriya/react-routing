@@ -1,12 +1,13 @@
 import React from "react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import {nanoid} from "nanoid"
 
 const FoodListSkeleton = () => {
   return <SkeletonTheme baseColor = "#8c96ac" highlightColor = "#aaa">
     {Array.from({ length: 20 }).map(() => {
     return (
-      <article className="food_card">
+      <article key={nanoid()} className="food_card">
         <div className="img-box">
           <Skeleton height={200} />
         </div>

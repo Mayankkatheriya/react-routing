@@ -4,7 +4,7 @@ import Summary from './Summary';
 import Testimonials from './Testimonials';
 
 function Home () {
-  window.scroll(0,0);
+//   window.scroll(0,0);
     return (
         <main className="home">
             <Hero />

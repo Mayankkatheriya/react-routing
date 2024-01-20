@@ -13,7 +13,7 @@ const Lists = ({ listItem, func }) => {
               className={window.location.pathname === item.path ? "menu-active" : ""}
               onClick={() => {
                 func(item.title);
-                navigate(item.path); // Navigate to the clicked path
+                // navigate(item.path); // Navigate to the clicked path
               }}
             >
               {item.title}

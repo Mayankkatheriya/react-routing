@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { FoodContext } from "../../Context/FoodContext";
 
 const Recipe = () => {
-  window.scroll(0,0);
+  // window.scroll(0,0);
   const [foodDetails, setFoodDetails] = useState(()=>{
     const recipe = localStorage.getItem("recipe")
     if(!recipe) {

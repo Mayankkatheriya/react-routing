@@ -3,7 +3,7 @@ import data from "./QuoteData.json";
 import Quote from "./Quote";
 
 const Quotes = () => {
-  window.scroll(0,0);
+  // window.scroll(0,0);
   return (
     <main className="quotes">
       {data.map((obj, index) => {
